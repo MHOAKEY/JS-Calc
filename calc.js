@@ -2,11 +2,11 @@
 
 // You will want some kind of html element to display the calculations (maybe a span) and a few buttons to press to input numbers and operators
 
-let input = document.getElementById("input")
+let input = document.getElementById("Input")
 const divide = document.getElementById("Divide")
 const multiply = document.getElementById("Multiply")
 const subtract = document.getElementById("Subtract")
-const Addition = document.getElementById("Addition")
+const addition = document.getElementById("Addition")
 const seven = document.getElementById("Seven")
 const eight = document.getElementById("Eight")
 const clear = document.getElementById("Clear")
@@ -18,3 +18,23 @@ const one = document.getElementById("One")
 const two = document.getElementById("Two")
 const three = document.getElementById("Three")
 const equal = document.getElementById("Equal")
+
+
+input.addEventListener("Click", useValue)
+
+
+function useValue() {
+    console.log("Dog")
+}
+
+function clearInput() {
+    console.log("Clear")
+}
+
+function allClear() {
+    console.log("All Clear")
+}
+
+function doEquation() {
+    console.log("Equals")
+}
