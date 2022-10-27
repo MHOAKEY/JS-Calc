@@ -10,7 +10,7 @@ const addition = document.getElementById("Addition")
 const seven = document.getElementById("Seven")
 const eight = document.getElementById("Eight")
 const clear = document.getElementById("Clear")
-const Four = document.getElementById("Four")
+const four = document.getElementById("Four")
 const five = document.getElementById("Five")
 const six = document.getElementById("Six")
 const allClear = document.getElementById("allClear")
@@ -21,6 +21,22 @@ const equal = document.getElementById("Equal")
 
 
 input.addEventListener("Click", useValue)
+divide.addEventListener("Click", useValue)
+multiply.addEventListener("Click", useValue)
+subtract.addEventListener("Click", useValue)
+addition.addEventListener("Click", useValue)
+seven.addEventListener("Click", useValue)
+eight.addEventListener("Click", useValue)
+clear.addEventListener("Click", clearInput)
+four.addEventListener("Click", useValue)
+five.addEventListener("Click", useValue)
+six.addEventListener("Click", useValue)
+allClear.addEventListener("Click", clearAll)
+one.addEventListener("Click", useValue)
+two.addEventListener("Click", useValue)
+three.addEventListener("Click", useValue)
+equal.addEventListener("Click", doEquation)
+
 
 
 function useValue() {
@@ -31,7 +47,7 @@ function clearInput() {
     console.log("Clear")
 }
 
-function allClear() {
+function clearAll() {
     console.log("All Clear")
 }
 
