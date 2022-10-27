@@ -50,6 +50,14 @@ function clearAll() {
   console.log("All Clear");
 }
 
+console.log(input);
+
 function doEquation() {
-  console.log("Equals");
+  let myArray = [];
+  let myAnswer = 0;
+  myArray = input.value.split("+");
+  //   TO DO: Creata a loop to find length of array
+  myAnswer = Number(myArray[0]) + Number(myArray[1]);
+  input.value = myAnswer;
+  //   console.log(myArray);
 }
