@@ -20,7 +20,6 @@ const two = document.getElementById("Two");
 const three = document.getElementById("Three");
 const equal = document.getElementById("Equal");
 const zero = document.getElementById("Zero");
-const decimal = document.getElementById("Decimal");
 
 input.addEventListener("click", useValue);
 divide.addEventListener("click", useValue);
@@ -39,9 +38,14 @@ one.addEventListener("click", useValue);
 two.addEventListener("click", useValue);
 three.addEventListener("click", useValue);
 equal.addEventListener("click", doEquation);
+zero.addEventListener("click", useValue);
 
-function reduceArray(total, num) {
+function reduceArrayAddition(total, num) {
   return total + num;
+}
+
+function reduceArraySubtract(total, num) {
+  return total - num;
 }
 
 function useValue(event) {
@@ -62,10 +66,20 @@ function doEquation() {
   let myArray = [];
   let myAnswer = 0;
   let numArray = [];
-  myArray = input.value.split("+");
-  numArray = myArray.map((str) => {
-    return Number(str);
-  });
-  myAnswer = numArray.reduce(reduceArray);
-  input.value = myAnswer;
+  if (input.value.includes("+")) {
+    myArray = input.value.split("+");
+    numArray = myArray.map((str) => {
+      return Number(str);
+    });
+    myAnswer = numArray.reduce(reduceArrayAddition);
+    input.value = myAnswer;
+  }
+  if (input.value.includes("-")) {
+    myArray = input.value.split("-");
+    numArray = myArray.map((str) => {
+      return Number(str);
+    });
+    myAnswer = numArray.reduce(reduceArraySubtract);
+    input.value = myAnswer;
+  }
 }
