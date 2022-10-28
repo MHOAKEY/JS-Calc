@@ -19,6 +19,8 @@ const one = document.getElementById("One");
 const two = document.getElementById("Two");
 const three = document.getElementById("Three");
 const equal = document.getElementById("Equal");
+const zero = document.getElementById("Zero");
+const decimal = document.getElementById("Decimal");
 
 input.addEventListener("click", useValue);
 divide.addEventListener("click", useValue);
