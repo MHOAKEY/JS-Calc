@@ -48,6 +48,14 @@ function reduceArraySubtract(total, num) {
   return total - num;
 }
 
+function reduceArrayDivide(total, num) {
+  return total / num;
+}
+
+function reduceArrayMultiply(total, num) {
+  return total * num;
+}
+
 function useValue(event) {
   input.value += event.target.innerHTML;
 }
@@ -80,6 +88,22 @@ function doEquation() {
       return Number(str);
     });
     myAnswer = numArray.reduce(reduceArraySubtract);
+    input.value = myAnswer;
+  }
+  if (input.value.includes("%")) {
+    myArray = input.value.split("%");
+    numArray = myArray.map((str) => {
+      return Number(str);
+    });
+    myAnswer = numArray.reduce(reduceArrayDivide);
+    input.value = myAnswer;
+  }
+  if (input.value.includes("X")) {
+    myArray = input.value.split("X");
+    numArray = myArray.map((str) => {
+      return Number(str);
+    });
+    myAnswer = numArray.reduce(reduceArrayMultiply);
     input.value = myAnswer;
   }
 }
