@@ -38,6 +38,10 @@ two.addEventListener("click", useValue);
 three.addEventListener("click", useValue);
 equal.addEventListener("click", doEquation);
 
+function reduceArray(total, num) {
+  return total + num;
+}
+
 function useValue(event) {
   input.value += event.target.innerHTML;
 }
@@ -55,9 +59,11 @@ console.log(input);
 function doEquation() {
   let myArray = [];
   let myAnswer = 0;
+  let numArray = [];
   myArray = input.value.split("+");
-  //   TO DO: Creata a loop to find length of array
-  myAnswer = Number(myArray[0]) + Number(myArray[1]);
+  numArray = myArray.map((str) => {
+    return Number(str);
+  });
+  myAnswer = numArray.reduce(reduceArray);
   input.value = myAnswer;
-  //   console.log(myArray);
 }
