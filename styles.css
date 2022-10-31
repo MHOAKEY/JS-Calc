@@ -6,8 +6,9 @@ body {
 
 button {
   background-color: #ffffff00;
-  /* font-family: "Monaco", monospace; */
   color: #fcf9f9;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   height: 60px;
   width: 60px;
   border-radius: 15px;
