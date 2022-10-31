@@ -73,7 +73,7 @@ function clearInput() {
 }
 
 function clearAll() {
-  console.log("All Clear");
+  history = "";
 }
 
 console.log(input);
