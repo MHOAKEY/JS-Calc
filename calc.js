@@ -90,16 +90,16 @@ function doEquation() {
     myAnswer = numArray.reduce(reduceArraySubtract);
     input.value = myAnswer;
   }
-  if (input.value.includes("%")) {
-    myArray = input.value.split("%");
+  if (input.value.includes("/")) {
+    myArray = input.value.split("/");
     numArray = myArray.map((str) => {
       return Number(str);
     });
     myAnswer = numArray.reduce(reduceArrayDivide);
     input.value = myAnswer;
   }
-  if (input.value.includes("X")) {
-    myArray = input.value.split("X");
+  if (input.value.includes("*")) {
+    myArray = input.value.split("*");
     numArray = myArray.map((str) => {
       return Number(str);
     });
