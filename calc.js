@@ -73,7 +73,7 @@ function clearInput() {
 }
 
 function clearAll() {
-  history = "";
+  document.getElementById("history").innerText = "";
 }
 
 console.log(input);
