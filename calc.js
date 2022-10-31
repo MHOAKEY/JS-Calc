@@ -3,6 +3,7 @@
 // You will want some kind of html element to display the calculations (maybe a span) and a few buttons to press to input numbers and operators
 
 let input = document.getElementById("Input");
+let history = "";
 const divide = document.getElementById("Divide");
 const multiply = document.getElementById("Multiply");
 const subtract = document.getElementById("Subtract");
@@ -40,6 +41,11 @@ three.addEventListener("click", useValue);
 equal.addEventListener("click", doEquation);
 zero.addEventListener("click", useValue);
 
+function addToHistory(value) {
+  history += value;
+  document.getElementById("history").innerText = history;
+}
+
 function reduceArrayAddition(total, num) {
   return total + num;
 }
@@ -58,9 +64,11 @@ function reduceArrayMultiply(total, num) {
 
 function useValue(event) {
   input.value += event.target.innerHTML;
+  addToHistory(event.target.innerText);
 }
 
 function clearInput() {
+  addToHistory("\n");
   input.value = "";
 }
 
@@ -71,6 +79,7 @@ function clearAll() {
 console.log(input);
 
 function doEquation() {
+  addToHistory("=");
   let myArray = [];
   let myAnswer = 0;
   let numArray = [];
@@ -81,6 +90,7 @@ function doEquation() {
     });
     myAnswer = numArray.reduce(reduceArrayAddition);
     input.value = myAnswer;
+    addToHistory(myAnswer);
   }
   if (input.value.includes("-")) {
     myArray = input.value.split("-");
@@ -89,6 +99,7 @@ function doEquation() {
     });
     myAnswer = numArray.reduce(reduceArraySubtract);
     input.value = myAnswer;
+    addToHistory(myAnswer);
   }
   if (input.value.includes("/")) {
     myArray = input.value.split("/");
@@ -97,6 +108,7 @@ function doEquation() {
     });
     myAnswer = numArray.reduce(reduceArrayDivide);
     input.value = myAnswer;
+    addToHistory(myAnswer);
   }
   if (input.value.includes("*")) {
     myArray = input.value.split("*");
@@ -105,5 +117,6 @@ function doEquation() {
     });
     myAnswer = numArray.reduce(reduceArrayMultiply);
     input.value = myAnswer;
+    addToHistory(myAnswer);
   }
 }
