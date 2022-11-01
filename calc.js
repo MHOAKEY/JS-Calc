@@ -78,8 +78,6 @@ function clearAll() {
   document.getElementById("history").innerText = "";
 }
 
-console.log(input);
-
 function doEquation() {
   addToHistory("=");
   let myArray = [];
