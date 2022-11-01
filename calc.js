@@ -1,7 +1,3 @@
-// Build a simple webpage that has an interactive calculator using JavaScript
-
-// You will want some kind of html element to display the calculations (maybe a span) and a few buttons to press to input numbers and operators
-
 let input = document.getElementById("Input");
 let HISTORY = "";
 const clear = document.getElementById("Clear");
@@ -55,43 +51,39 @@ function clearAll() {
   document.getElementById("history").innerText = "";
 }
 
+function makesArray(operatorString) {
+  myArray = input.value.split(operatorString);
+  numArray = myArray.map((str) => {
+    return Number(str);
+  });
+  return numArray;
+}
+
 function doEquation() {
   addToHistory("=");
   let myArray = [];
   let myAnswer = 0;
   let numArray = [];
   if (input.value.includes("+")) {
-    myArray = input.value.split("+");
-    numArray = myArray.map((str) => {
-      return Number(str);
-    });
+    numArray = makesArray("+");
     myAnswer = numArray.reduce(reduceArrayAddition);
     input.value = myAnswer;
     addToHistory(myAnswer);
   }
   if (input.value.includes("-")) {
-    myArray = input.value.split("-");
-    numArray = myArray.map((str) => {
-      return Number(str);
-    });
+    numArray = makesArray("-");
     myAnswer = numArray.reduce(reduceArraySubtract);
     input.value = myAnswer;
     addToHistory(myAnswer);
   }
   if (input.value.includes("/")) {
-    myArray = input.value.split("/");
-    numArray = myArray.map((str) => {
-      return Number(str);
-    });
+    numArray = makesArray("/");
     myAnswer = numArray.reduce(reduceArrayDivide);
     input.value = myAnswer;
     addToHistory(myAnswer);
   }
   if (input.value.includes("*")) {
-    myArray = input.value.split("*");
-    numArray = myArray.map((str) => {
-      return Number(str);
-    });
+    numArray = makesArray("*");
     myAnswer = numArray.reduce(reduceArrayMultiply);
     input.value = myAnswer;
     addToHistory(myAnswer);
