@@ -67,25 +67,19 @@ function doEquation() {
   if (input.value.includes("+")) {
     numArray = makesArray("+");
     myAnswer = numArray.reduce(reduceArrayAddition);
-    input.value = myAnswer;
-    addToHistory(myAnswer);
   }
   if (input.value.includes("-")) {
     numArray = makesArray("-");
     myAnswer = numArray.reduce(reduceArraySubtract);
-    input.value = myAnswer;
-    addToHistory(myAnswer);
   }
   if (input.value.includes("/")) {
     numArray = makesArray("/");
     myAnswer = numArray.reduce(reduceArrayDivide);
-    input.value = myAnswer;
-    addToHistory(myAnswer);
   }
   if (input.value.includes("*")) {
     numArray = makesArray("*");
     myAnswer = numArray.reduce(reduceArrayMultiply);
-    input.value = myAnswer;
-    addToHistory(myAnswer);
   }
+  input.value = myAnswer;
+  addToHistory(myAnswer);
 }
