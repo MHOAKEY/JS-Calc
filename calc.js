@@ -3,7 +3,7 @@
 // You will want some kind of html element to display the calculations (maybe a span) and a few buttons to press to input numbers and operators
 
 let input = document.getElementById("Input");
-let history = "";
+let HISTORY = "";
 const clear = document.getElementById("Clear");
 const allClear = document.getElementById("allClear");
 const equal = document.getElementById("Equal");
@@ -19,8 +19,8 @@ function addEventListenerToCalcButtons(calcButton) {
 }
 
 function addToHistory(value) {
-  history += value;
-  document.getElementById("history").innerText = history;
+  HISTORY += value;
+  document.getElementById("history").innerText = HISTORY;
 }
 
 function reduceArrayAddition(total, num) {
@@ -51,7 +51,7 @@ function clearInput() {
 
 function clearAll() {
   input.value = "";
-  history = "";
+  HISTORY = "";
   document.getElementById("history").innerText = "";
 }
 
