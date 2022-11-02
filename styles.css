@@ -6,20 +6,20 @@ body {
 
 button {
   background-color: #ffffff00;
+  border-radius: 15px;
   color: #fcf9f9;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  font-size: 40px;
   height: 60px;
   width: 60px;
-  border-radius: 15px;
   margin: 4px;
-  font-size: 40px;
 }
 
 .inputsize {
   background-color: #ffffff00;
   color: #fcf9f9;
+  font-size: 40px;
   height: 40px;
   width: 275px;
-  font-size: 40px;
 }
